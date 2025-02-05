@@ -14,12 +14,14 @@ app.get('/', (req, res) => {
 });
 
 //Exercise 2
+// <http://localhost:3000/tasks>
 app.get('/tasks', (req, res) => {
   let result = myModule.tasks;
   res.json(result);
 });
 
 //Exercise 1
+// <http://localhost:3000/tasks/add?taskId=4&text=Review%20code&priority=1>
 function addTask(tasks, task) {
   tasks.push(task);
   return tasks;
@@ -35,7 +37,7 @@ app.get('/tasks/add', (req, res) => {
 });
 
 //Exercise 3
-// url: /tasks/sort-by-priority
+// <http://localhost:3000/tasks/sort-by-priority>
 function sortByPriority(a, b) {
   return a.priority - b.priority;
 }
